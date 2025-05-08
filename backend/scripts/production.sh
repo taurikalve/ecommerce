@@ -2,14 +2,18 @@
 NAME=ecommerce-backend
 TEMP_NAME=$NAME-new
 PROXY=traefik-proxy
-VOLUME="$NAME"-static
+STATIC_VOLUME="$NAME"-static
+CERTS_VOLUME="$NAME"-certs
 DB_NET=mongo-net # !!!
 DIR=$(dirname $(realpath $0))
 APP_DIR=$(dirname $DIR)
 
-# Volume
-if [ ! "$(docker volume ls | grep $VOLUME)" ]; then
-  docker volume create $VOLUME
+# Volumes
+if [ ! "$(docker volume ls | grep $STATIC_VOLUME)" ]; then
+  docker volume create $STATIC_VOLUME
+fi
+if [ ! "$(docker volume ls | grep $CERTS_VOLUME)" ]; then
+  docker volume create $CERTS_VOLUME
 fi
 
 docker run -d \
@@ -17,7 +21,8 @@ docker run -d \
 --env-file $APP_DIR/.env.production.local \
 --net $PROXY \
 --net $DB_NET \
---volume $VOLUME:/ecommerce/backend/static \
+--volume $STATIC_VOLUME:/ecommerce/backend/static \
+--volume $CERTS_VOLUME:/ecommerce/backend/certs \
 --restart unless-stopped \
 --label "traefik.enable=true" \
 --label "traefik.http.routers.$NAME.rule=Host(\`server.my-ecommerce-domain.com\`)" \
