@@ -5,8 +5,8 @@ PROXY=traefik-proxy
 STATIC_VOLUME="$NAME"-static
 CERTS_VOLUME="$NAME"-certs
 DB_NET=mongo-net # !!!
-DIR=$(dirname $(realpath $0))
-APP_DIR=$(dirname $DIR)
+DIR=$(dirname $(realpath "$0"))
+APP_DIR=$(dirname "$DIR")
 
 # Volumes
 if [ ! "$(docker volume ls | grep "$STATIC_VOLUME")" ]; then
