@@ -1,5 +1,7 @@
 # eCommerce
 
+### WIP!
+
 eCommerce platform built on:
 
 - TypeScript
