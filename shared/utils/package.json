@@ -1,0 +1,14 @@
+{
+  "name": "@ecommerce/utils",
+  "version": "1.0.0",
+  "main": "./build/index.js",
+  "type": "module",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

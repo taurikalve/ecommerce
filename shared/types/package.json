@@ -1,0 +1,14 @@
+{
+  "name": "@ecommerce/types",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "echo \"Nothing to build\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

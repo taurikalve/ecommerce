@@ -1,0 +1,20 @@
+# From workspaces root
+# Ignore sister apps
+/backend
+
+# General ignore
+**/.git/
+**/node_modules/
+**/build/
+**/debug/
+**/dev/
+# **/.env*.local
+**/Dockerfile
+**/.dockerignore
+**/npm-debug.log
+**/*.md
+**/scripts/
+**/tests/
+
+# Personal ignore
+**/.next/

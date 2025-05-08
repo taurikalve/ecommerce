@@ -1,0 +1,38 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:shared": "npm run build -w @ecommerce/consts -w @ecommerce/utils"
+  },
+  "workspaces": [
+    "shared/*",
+    "backend",
+    "frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taurikalve/ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taurikalve/ecommerce/issues"
+  },
+  "homepage": "https://github.com/taurikalve/ecommerce#readme",
+  "devDependencies": {
+    "@ecommerce/types": "^1.0.0",
+    "@types/node": "^22.15.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@ecommerce/consts": "^1.0.0",
+    "@ecommerce/utils": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
