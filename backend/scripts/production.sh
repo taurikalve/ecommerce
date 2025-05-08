@@ -9,10 +9,10 @@ DIR=$(dirname $(realpath $0))
 APP_DIR=$(dirname $DIR)
 
 # Volumes
-if [ ! "$(docker volume ls | grep $STATIC_VOLUME)" ]; then
+if [ ! "$(docker volume ls | grep "$STATIC_VOLUME")" ]; then
   docker volume create $STATIC_VOLUME
 fi
-if [ ! "$(docker volume ls | grep $CERTS_VOLUME)" ]; then
+if [ ! "$(docker volume ls | grep "$CERTS_VOLUME")" ]; then
   docker volume create $CERTS_VOLUME
 fi
 
